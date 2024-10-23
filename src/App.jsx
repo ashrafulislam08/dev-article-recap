@@ -4,13 +4,13 @@ import { Header } from "./components/Header/Header";
 
 function App() {
   return (
-    <>
+    <div className="max-w-7xl mx-auto">
       <Header />
       <div className="md:flex">
         <Blogs />
         <Bookmarks />
       </div>
-    </>
+    </div>
   );
 }
 
