@@ -5,6 +5,7 @@ import { Header } from "./components/Header/Header";
 
 function App() {
   const [bookmarks, setBookmarks] = useState([]);
+  const [readingTime, setReadingTime] = useState(0);
 
   const handleAddToBookmark = (book) => {
     const isExist = bookmarks.find((bookmark) => bookmark.id === book.id);
@@ -15,11 +16,18 @@ function App() {
     }
   };
 
+  const handleMarkAsRead = (time) => {
+    console.log("marking as read", time);
+  };
+
   return (
     <div className="max-w-7xl mx-auto">
       <Header />
       <div className="md:flex p-3 gap-2">
-        <Blogs handleAddToBookmark={handleAddToBookmark} />
+        <Blogs
+          handleAddToBookmark={handleAddToBookmark}
+          handleMarkAsRead={handleMarkAsRead}
+        />
         <Bookmarks bookmarks={bookmarks} />
       </div>
     </div>
